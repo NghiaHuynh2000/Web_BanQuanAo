@@ -4,17 +4,22 @@ create table USER
 (
 	id int auto_increment,
 	email varchar(50),
-	username varchar(50) unique not null,
+	username varchar(50),
 	password varchar(36) not null,
 	avatar varchar(50),
 	Adress varchar(50),
 	permission int,
 	primary key(id)
 );
+
+Insert into user(email,password) values('vanhoang@gmail.com','12345');
+
 create table Category(
 	cate_id int primary key auto_increment,
 	cate_name varchar(255) not null
 );
+
+insert into Category(cate_name) values('Hồ Hoài Minh');
 
 create table Product(
 	id int primary key auto_increment,
@@ -24,6 +29,8 @@ create table Product(
 	des varchar(2000),
 	image varchar(50)
 );
+
+insert into Product(name,price,cate_id,des,image) values('Giày Nike',20000,1,'màu xanh','/image.jpg');
 
 
 create table Cart(
