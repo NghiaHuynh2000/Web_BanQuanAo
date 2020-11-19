@@ -1,7 +1,7 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>-->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<c:url value="/View/admin/Static" var="url"></c:url>
+<!--<c:url value="/View/admin/Static" var="url"></c:url>-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,10 +26,10 @@
 <body>
 	<div id="wrapper">
 
-		<jsp:include page="/View/admin/nav-bar.jsp"></jsp:include>
+<!--		<jsp:include page="/View/admin/nav-bar.jsp"></jsp:include>-->
 
 		<!-- /. NAV TOP  -->
-		<jsp:include page="/View/admin/slide-bar.jsp"></jsp:include>
+<!--		<jsp:include page="/View/admin/slide-bar.jsp"></jsp:include>-->
 		<!-- /. NAV SIDE  -->
 		<div id="page-wrapper">
 			<div id="page-inner">
@@ -64,7 +64,7 @@
 											</tr>
 										</thead>
 										<tbody>
-										<c:forEach items="${proList }" var="pro" >
+									<!--	<c:forEach items="${proList }" var="pro" >
 											<tr class="odd gradeX">
 												<td>${pro.id }</td>
 													<c:url value="/image?fname=${pro.image }" var="imgUrl"></c:url>
@@ -84,7 +84,7 @@
 														class="center">Delete</a></td>
 												
 											</tr>
-											</c:forEach>
+											</c:forEach>-->
 											
 											
 										</tbody>
