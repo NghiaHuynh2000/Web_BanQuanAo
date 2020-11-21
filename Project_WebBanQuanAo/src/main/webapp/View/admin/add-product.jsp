@@ -1,3 +1,4 @@
+<%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -67,7 +68,7 @@
 												<div class="checkbox">
 													<select name="category">
 														<c:forEach items="${categories}" var="c">
-															<option value="${c.id}">${c.name}</option>
+															<option value="${c.getCate_id()}">${c.getCate_name()}</option>
 														</c:forEach>
 													</select>
 												</div>

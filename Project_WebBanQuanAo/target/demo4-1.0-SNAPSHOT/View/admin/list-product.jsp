@@ -1,11 +1,8 @@
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="Model_Query.BLProduct" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="Model_Table.TbProduct" %>
-<%@ page import="Controller.Product_List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <c:url value="/View/admin/Static" var="url"></c:url>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -30,9 +27,6 @@
 	rel="stylesheet" />
 </head>
 <body>
-	<%
-		ArrayList<TbProduct> products= (ArrayList<TbProduct>) request.getAttribute("products");
-	%>
 	<div id="wrapper">
 
 		<jsp:include page="/View/admin/nav-bar.jsp"></jsp:include>
@@ -73,23 +67,23 @@
 											</tr>
 										</thead>
 										<tbody>
-										<c:forEach items="${products}" var="product" >
+										<c:forEach items="${proList}" var="pro" >
 											<tr class="odd gradeX">
-												<td>${product.getId()}</td>
-											<!--		<c:url value="/image?fname=${product.getImage()}" var="imgUrl"></c:url>-->
+												<td>${pro.getId()}</td>
+											<!--		<c:url value="/image?fname=${pro.getImage()}" var="imgUrl"></c:url>-->
 													<td><img height="150" width="200" src="${imgUrl}" /></td>
 
-													<td>${product.getName() }</td>
-												<td>${product.getPrice() }</td>
-												<td>${product.getCate_id() }</td>
-												<td>${product.getDes() } </td>
+													<td>${pro.getName() }</td>
+												<td>${pro.getPrice() }</td>
+												<td>${pro.getCategory().getCate_name() }</td>
+												<td>${pro.getDes() } </td>
 												<td><a
-														href="<c:url value='/product/detail?id=${product.getId() }'/>"
+														href="<c:url value='/product/detail?id=${pro.getId() }'/>"
 														class="center">Detail</a> | <a
-														href="<c:url value='/admin/product/edit?id=${product.getId() }'/>"
+														href="<c:url value='/admin/product/edit?id=${pro.getId() }'/>"
 														class="center">Edit</a>
 														| <a
-														href="<c:url value='/admin/product/delete?id=${product.getId() }'/>"
+														href="<c:url value='/admin/product/delete?id=${pro.getId() }'/>"
 														class="center">Delete</a></td>
 												
 											</tr>
