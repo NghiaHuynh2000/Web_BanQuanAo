@@ -27,7 +27,7 @@ public class UserEditController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         User user = userService.get(id);
         request.setAttribute("user", user);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/view/edit-user.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/View/admin/edit-user.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -49,8 +49,9 @@ public class UserEditController extends HttpServlet {
                     user.setUserName(item.getString());
                 } else if (item.getFieldName().equals("password")) {
                     user.setPassword(item.getString());
-                } else if (item.getFieldName().equals("role")) {
-                    user.setRoleId(Integer.parseInt(item.getString()));
+                } else if (item.getFieldName().equals("address")) {
+                    user.setAddress(item.getString());
+
                 } else if (item.getFieldName().equals("avatar")) {
                     if (item.getSize() > 0) {// neu co file d
                         final String dir = "F:\\upload";
@@ -67,7 +68,20 @@ public class UserEditController extends HttpServlet {
                     }
                 }
             }
-
+            //int id = Integer.parseInt(request.getParameter("id"));
+//            String email = request.getParameter("email");
+//            String username = request.getParameter("username");
+//            String password = request.getParameter("password");
+//            String address = request.getParameter("address");
+//            String permission = request.getParameter("permission");
+//            String avatar = request.getParameter("avatar");
+//            user.setId(1);
+//            user.setEmail(email);
+//            user.setUserName(username);
+//            user.setPassword(password);
+//            user.setAddress(address);
+//            user.setPermission(2);
+//            user.setAvatar(null);
             userService.edit(user);
 
             response.sendRedirect(request.getContextPath() + "/admin/user/list");

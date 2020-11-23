@@ -9,7 +9,7 @@
 						class="user-image img-responsive" /></li>
 
 
-					<li><a class="active-menu" href="#"><i
+					<li><a class="active-menu" href="${pageContext.request.contextPath }"><i
 							class="fa fa-dashboard fa-3x"></i> Dashboard</a></li>
 					<li><a href="${pageContext.request.contextPath }/admin/product/list"><i class="fa fa-desktop fa-3x"></i>
 							Product Management</a></li>

@@ -30,7 +30,7 @@ public class UserAddController extends HttpServlet {
                 request.setAttribute("errMsg", "Username da ton tai!!!");
             }
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/view/add-user.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/View/admin/add-user.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -50,8 +50,7 @@ public class UserAddController extends HttpServlet {
                     user.setUserName(item.getString());
                 } else if (item.getFieldName().equals("password")) {
                     user.setPassword(item.getString());
-                } else if (item.getFieldName().equals("role")) {
-                    user.setRoleId(Integer.parseInt(item.getString()));;
+
                 } else if (item.getFieldName().equals("avatar")) {
                     final String dir = "F:\\upload";
                     String originalFileName = item.getName();

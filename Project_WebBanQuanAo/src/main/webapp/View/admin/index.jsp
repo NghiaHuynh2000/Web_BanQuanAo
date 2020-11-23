@@ -25,7 +25,7 @@
 <body>
 	<div id="wrapper">
 
-		
+
 		<jsp:include page="/View/admin/nav-bar.jsp"></jsp:include>
 
 		<!-- /. NAV TOP  -->
@@ -94,11 +94,11 @@
 				<hr />
 				<script type="text/javascript"
 					src="http://giavangvn.org/GiavangFullScript/dat-gia-vang/Widgets">
-					
+
 				</script>
 				<noscript>
-					Vui lòng bật javascript để xem <a href="http://giavangvn.org">giá
-						vàng</a>
+					Vui l�ng b?t javascript ?? xem <a href="http://giavangvn.org">gi�
+						v�ng</a>
 				</noscript>
 				<!-- /. ROW  -->
 				<div class="row">
@@ -197,7 +197,7 @@
 				</div>
 			</div>
 			<!-- /. ROW  -->
-		
+
 			<!-- /. ROW  -->
 		</div>
 		<!-- /. PAGE INNER  -->
