@@ -1,22 +1,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<c:url value="/view/admin/static" var="url"></c:url>
+<c:url value="/View/admin/Static" var="url"></c:url>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Edit User</title>
-<!-- BOOTSTRAP STYLES-->
-<link href="${url}/css/bootstrap.css" rel="stylesheet" />
-<!-- FONTAWESOME STYLES-->
-<link href="${url}/css/font-awesome.css" rel="stylesheet" />
-<!-- CUSTOM STYLES-->
-<link href="${url}/css/custom.css" rel="stylesheet" />
-<!-- GOOGLE FONTS-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans'
-	rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Product Management</title>
+	<!-- BOOTSTRAP STYLES-->
+	<link href="${url}/css/bootstrap.css" rel="stylesheet" />
+	<!-- FONTAWESOME STYLES-->
+	<link href="${url}/css/font-awesome.css" rel="stylesheet" />
+	<!-- MORRIS CHART STYLES-->
+
+	<!-- CUSTOM STYLES-->
+	<link href="${url}/css/custom.css" rel="stylesheet" />
+	<!-- GOOGLE FONTS-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+		  rel='stylesheet' type='text/css' />
+	<!-- TABLE STYLES-->
+	<link href="${url}/js/dataTables/dataTables.bootstrap.css"
+		  rel="stylesheet" />
 </head>
 <body>
 	<div id="wrapper">
@@ -59,12 +65,17 @@
 												<label>Email:</label> <input class="form-control"
 													value="${user.email }" name="email" />
 											</div>
+
+											<div class="form-group">
+												<label>Address:</label> <input class="form-control"
+																			 value="${user.address }" name="address" />
+											</div>
 											<div class="form-group">
 												<label>Role</label>
 												<div class="checkbox">
-													<label> <input type="radio" value="1" name="role" />Admin
+													<label> <input type="radio" value="1" name="permission" />Admin
 													</label> <br> <label> <input type="radio" value="2"
-														name="role" checked="checked"/>Client
+														name="permission" checked="checked"/>Client
 													</label>
 												</div>
 
