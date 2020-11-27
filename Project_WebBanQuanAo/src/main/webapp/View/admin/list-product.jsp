@@ -6,10 +6,8 @@
 <c:url value="/View/admin/Static" var="url"></c:url>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
-
 <html>
 <head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Product Management</title>
@@ -87,7 +85,7 @@
 														| <a
 														href="<c:url value='/admin/product/delete?id=${pro.getId() }'/>"
 														class="center">Delete</a></td>
-
+												
 											</tr>
 											</c:forEach>
 										</tbody>
