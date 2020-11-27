@@ -1,38 +1,31 @@
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-		 pageEncoding="UTF-8"%>
+	pageEncoding="ISO-8859-1"%>
 <c:url value="/View/admin/Static" var="url"></c:url>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
-
 <html>
 <head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Product Management</title>
-	<!-- BOOTSTRAP STYLES-->
-	<link href="${url}/css/bootstrap.css" rel="stylesheet" />
-	<!-- FONTAWESOME STYLES-->
-	<link href="${url}/css/font-awesome.css" rel="stylesheet" />
-	<!-- MORRIS CHART STYLES-->
+<meta charset="ISO-8859-1">
+<title>Dashboard</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- BOOTSTRAP STYLES-->
+<link rel="stylesheet" href="Static/css/bootstrap.css">
+<link rel="stylesheet" href="Static/css/custom.css">
+<link rel="stylesheet" href="Static/css/font-awesome.css">
 
-	<!-- CUSTOM STYLES-->
-	<link href="${url}/css/custom.css" rel="stylesheet" />
-	<!-- GOOGLE FONTS-->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans'
-		  rel='stylesheet' type='text/css' />
-	<!-- TABLE STYLES-->
-	<link href="${url}/js/dataTables/dataTables.bootstrap.css"
-		  rel="stylesheet" />
+
+
+<link rel="stylesheet" href="Static/js/morris/morris-0.4.3.min.css">
+<!-- GOOGLE FONTS-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css' />
 </head>
 <body>
 <body>
 	<div id="wrapper">
 
-
+		
 		<jsp:include page="/View/admin/nav-bar.jsp"></jsp:include>
 
 		<!-- /. NAV TOP  -->
@@ -101,10 +94,10 @@
 				<hr />
 				<script type="text/javascript"
 					src="http://giavangvn.org/GiavangFullScript/dat-gia-vang/Widgets">
-
+					
 				</script>
 				<noscript>
-					Vui lòng b?t javascript ?? xem <a href="http://giavangvn.org">giá
+					Vui lòng bật javascript để xem <a href="http://giavangvn.org">giá
 						vàng</a>
 				</noscript>
 				<!-- /. ROW  -->
@@ -204,7 +197,7 @@
 				</div>
 			</div>
 			<!-- /. ROW  -->
-
+		
 			<!-- /. ROW  -->
 		</div>
 		<!-- /. PAGE INNER  -->
