@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = { "/admin/category/delete" })
 public class CategoryDeleteController extends HttpServlet {
-    CategoryService cateService = new CategoryServiceImpl();///333333333
+    CategoryService cateService = new CategoryServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
