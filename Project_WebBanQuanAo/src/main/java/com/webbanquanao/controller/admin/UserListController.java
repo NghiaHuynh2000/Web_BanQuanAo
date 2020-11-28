@@ -21,7 +21,7 @@ public class UserListController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<User> userList = userService.getAll();
         request.setAttribute("userList", userList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/view/list-user.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/View/admin/list-user.jsp");
         dispatcher.forward(request, response);
     }
 

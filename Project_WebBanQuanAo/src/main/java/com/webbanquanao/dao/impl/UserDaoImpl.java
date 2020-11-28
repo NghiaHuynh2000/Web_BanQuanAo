@@ -14,28 +14,16 @@ import java.util.List;
 public class UserDaoImpl extends JDBCConnection implements UserDao{
     @Override
     public void insert(User user) {
-        int roleId=0;
-        String sql = "INSERT INTO [User](email, username, password,avatar,role_id) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO User(avatar,email, username, password,address,permission) VALUES (?,?,?,?,?,?)";
         Connection con = super.getJDBCConnection();
-
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, user.getEmail());
-            ps.setString(2, user.getUserName());
-            ps.setString(3, user.getPassword());
-            ps.setString(4, user.getAvatar());
-            try {
-                if(user.getRoleId()==1) {
-                    roleId=1;
-                }else {
-                    roleId=2;
-                }
-
-            } catch (Exception e) {
-                roleId=2;
-            }
-            ps.setInt(5, roleId);
-            ;
+            ps.setString(1, user.getAvatar());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getUserName());
+            ps.setString(4, user.getPassword());
+            ps.setString(5, user.getAddress());
+            ps.setInt(6, user.getPermission());
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -44,7 +32,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao{
 
     @Override
     public void edit(User user) {
-        String sql = "UPDATE [User] SET email = ? , username = ?, password = ?, avatar = ?, role_id = ? WHERE id = ?";
+        String sql = "UPDATE [User] SET email = ? , username = ?, password = ?, avatar = ?, address = ?, permission = ? WHERE id = ?";
         Connection con = super.getJDBCConnection();
 
         try {
@@ -53,8 +41,9 @@ public class UserDaoImpl extends JDBCConnection implements UserDao{
             ps.setString(2, user.getUserName());
             ps.setString(3, user.getPassword());
             ps.setString(4, user.getAvatar());
-            ps.setInt(5, user.getRoleId());
-            ps.setInt(6, user.getId());
+            ps.setString(5, user.getAddress());
+            ps.setInt(6, user.getPermission());
+            ps.setInt(7, user.getId());
             ps.executeUpdate();
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -64,7 +53,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao{
 
     @Override
     public void delete(int id) {
-        String sql = "DELETE FROM [User] WHERE id = ?";
+        String sql = "DELETE FROM User WHERE id = ?";
         Connection con = super.getJDBCConnection();
 
         try {
@@ -95,7 +84,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao{
                 user.setUserName(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setAvatar(rs.getString("avatar"));
-                user.setRoleId(Integer.parseInt(rs.getString("role_id")));
+
 
                 return user;
 
@@ -125,7 +114,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao{
                 user.setUserName(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setAvatar(rs.getString("avatar"));
-                user.setRoleId(Integer.parseInt(rs.getString("role_id")));
+
 
                 return user;
 
@@ -140,7 +129,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao{
     @Override
     public List<User> getAll() {
         List<User> userList = new ArrayList<User>();
-        String sql = "SELECT * FROM [User]";
+        String sql = "SELECT * FROM User";
         Connection conn = super.getJDBCConnection();
 
         try {
@@ -155,7 +144,8 @@ public class UserDaoImpl extends JDBCConnection implements UserDao{
                 user.setUserName(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setAvatar(rs.getString("avatar"));
-                user.setRoleId(Integer.parseInt(rs.getString("role_id")));
+                user.setAddress(rs.getString("address"));
+                user.setPermission(rs.getInt("permission"));
 
                 userList.add(user);
             }
@@ -187,7 +177,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao{
                 user.setUserName(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setAvatar(rs.getString("avatar"));
-                user.setRoleId(Integer.parseInt(rs.getString("role_id")));
+
 
                 userList.add(user);
             }

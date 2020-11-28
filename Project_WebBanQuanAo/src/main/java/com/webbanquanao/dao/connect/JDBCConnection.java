@@ -10,7 +10,7 @@ public class JDBCConnection {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             String user = "root";
-            String pass = "nhattaisin9999";
+            String pass = "@nvp111111";
             String url = "jdbc:mysql://localhost:3306/web_ban_quan_ao";
             connection = DriverManager.getConnection(url,user,pass);
             System.out.println("thanh cong");
